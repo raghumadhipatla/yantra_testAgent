@@ -1,0 +1,27 @@
+name: Mirror to AWS CodeCommit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Debug remote
+        run: git remote -v
+
+      - name: Mirror to CodeCommit
+        env:
+          AWS_USERNAME: ${{ secrets.AWS_USERNAME }}
+          AWS_PASSWORD: ${{ secrets.AWS_PASSWORD }}
+        run: |
+          git remote add aws https://${RaghuM-at-211289421420}:${c1rZ5Qh3AcbUibCZkT99WCHJXmDN1H8Ea566vbwpUXN0eHZHtNGDHnBr1jU=}@git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/yantra-app
+          git push aws --mirror
