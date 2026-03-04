@@ -23,5 +23,5 @@ jobs:
           AWS_USERNAME: ${{ secrets.AWS_USERNAME }}
           AWS_PASSWORD: ${{ secrets.AWS_PASSWORD }}
         run: |
-          git remote add aws https://${RaghuM-at-211289421420}:${c1rZ5Qh3AcbUibCZkT99WCHJXmDN1H8Ea566vbwpUXN0eHZHtNGDHnBr1jU=}@git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/yantra-app
+          git remote add aws https://${{RaghuM-at-211289421420}}:${{c1rZ5Qh3AcbUibCZkT99WCHJXmDN1H8Ea566vbwpUXN0eHZHtNGDHnBr1jU=}}@git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/yantra-app
           git push aws --mirror
